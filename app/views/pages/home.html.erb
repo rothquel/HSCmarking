@@ -1,2 +1,12 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<% if student_signed_in? %>
+  <%= button_to(
+          "Log Out",
+          destroy_student_session_path,
+          method: :delete
+        ) %>
+<% else %>
+  <p>log in here</p>
+<% end %>
