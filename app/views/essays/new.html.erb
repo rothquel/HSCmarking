@@ -1,7 +1,19 @@
-<%= simple_form_for [@essay] do |f| %>
-  <%= f.label :subject %>
-  <%= f.text_field :subject %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
-<% end %>
+<div class="card">
+  <div class="card-body">
+    <h4 class="header-title">Upload your essay</h4>
+    <p class="text-muted font-14">Enter the details of your essay below and upload your file as a .pdf or .doc. You can also include any additional documents, like marking rubrics or assessment notifications.</p>
+      <%= simple_form_for [@essay] do |f| %>
+        <div class="mb-3">
+            <%= f.input :title, hint: "Give it a description so you'll recognise it", class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= f.input :subject, collection: ['English', 'Modern History', 'Ancient History'], class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= f.input :subject, as: :text, class: "form-control" %>
+        </div>
+
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>
