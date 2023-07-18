@@ -1,4 +1,4 @@
-<%= form_with model: @essay do |f| %>
+<%= simple_form_for [@essay] do |f| %>
   <%= f.label :subject %>
   <%= f.text_field :subject %>
   <%= f.label :title %>

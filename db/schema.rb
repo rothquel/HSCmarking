@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_18_063120) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_18_072543) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_063120) do
     t.string "subject"
     t.string "title"
     t.datetime "returnedon"
+    t.bigint "student_id"
+    t.integer "status", default: 1
+    t.boolean "returned", default: false
+    t.index ["student_id"], name: "index_essays_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -38,4 +42,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_063120) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "essays", "students"
 end

@@ -78,47 +78,6 @@
                 </div>
 
                 <ul class="topbar-menu d-flex align-items-center gap-3">
-                    <%# <li class="dropdown d-lg-none">
-                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="ri-search-line font-22"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
-                            <form class="p-3">
-                                <input type="search" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                            </form>
-                        </div>
-                    </li> %>
-
-                    <%# <li class="dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="assets/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12">
-                            <span class="align-middle d-none d-lg-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated">
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <img src="assets/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <img src="assets/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <img src="assets/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <img src="assets/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                            </a>
-
-                        </div>
-                    </li> %>
-
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="ri-notification-3-line font-22"></i>
@@ -261,8 +220,8 @@
                                 <img src="/assets/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
                             </span>
                             <span class="d-lg-flex flex-column gap-1 d-none">
-                                <h5 class="my-0">Name</h5>
-                                <h6 class="my-0 fw-normal">Tutor</h6>
+                                <h5 class="my-0"><%= current_student.first_name %></h5>
+                                <h6 class="my-0 fw-normal">Genius Student</h6>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
@@ -600,7 +559,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script> TutorApp
+                            <h4>HSC Marking</h4>
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-end footer-links d-none d-md-block">

@@ -5,7 +5,13 @@ class EssaysController < ApplicationController
 
   def create
     @essay = Essay.new(essay_params)
+    @essay.student = current_student
     @essay.save
+    if @essay.save
+      redirect_to essay_path(@essay)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def index
