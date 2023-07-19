@@ -10,10 +10,21 @@
             <%= f.input :subject, collection: ['English', 'Modern History', 'Ancient History'], class: "form-control" %>
         </div>
         <div class="mb-3">
-            <%= f.input :subject, as: :text, class: "form-control" %>
+            <%= f.input :question, label: 'Essay question', as: :text, class: "form-control" %>
         </div>
-
-        <%= f.submit class: "btn btn-primary" %>
+        <div class="mb-3">
+            <%= f.input :mark, label: 'To be marked out of', hint: "What would you like your marker to grade your essay out of (if not defined, it will be marked out of 20)", class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= f.input :notes, as: :text, hint: "Add any notes for your marker", class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= f.input :primarydoc, label: 'Your essay file', as: :file, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= f.input :secondarydoc, label: 'Any additional files', as: :file, class: "form-control" %>
+        </div>
+        <%= f.submit 'Go to payment', class: "btn btn-primary" %>
       <% end %>
   </div>
 </div>

@@ -1,5 +1,7 @@
 class Essay < ApplicationRecord
   belongs_to :student
+  has_one_attached :primarydoc
+  has_one_attached :secondarydoc
 
   def add_48_hours(created_at)
     # Convert the date_created to a DateTime object

@@ -8,7 +8,18 @@ class EssaysController < ApplicationController
     @essay.student = current_student
     @essay.save
     if @essay.save
-      redirect_to essay_path(@essay)
+      session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        line_items: [{
+          name: 'HSCmarking.com.au Essay Marking',
+          amount: 1000,  # Replace with the actual price for the essay
+          currency: 'aud',
+          quantity: 1
+        }],
+        success_url: essay_url(@essay),
+        cancel_url: new_essay_url
+      )
+      redirect_to session.url, allow_other_host: true
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,6 +36,12 @@ class EssaysController < ApplicationController
   private
 
   def essay_params
-    params.require(:essay).permit(:subject, :title)
+    params.require(:essay).permit(:subject, :title, :question, :mark, :notes, :primarydoc, :secondarydoc)
+  end
+
+  def attach_file(essay, file)
+    return unless file
+
+    essay.primarydoc.attach(file)
   end
 end

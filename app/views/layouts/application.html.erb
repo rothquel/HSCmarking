@@ -40,24 +40,24 @@
                     <!-- Topbar Brand Logo -->
                     <div class="logo-topbar">
                         <!-- Logo light -->
-                        <a href="index.html" class="logo-light">
+                        <%= link_to essays_path, class: "logo-light" do %>
                             <span class="logo-lg">
                                 <img src="/assets/logo.png" alt="logo">
                             </span>
                             <span class="logo-sm">
                                 <img src="/assets/logo-sm.png" alt="small logo">
                             </span>
-                        </a>
+                        <% end %>
 
                         <!-- Logo Dark -->
-                        <a href="index.html" class="logo-dark">
+                        <%= link_to essays_path, class: "logo-dark" do %>
                             <span class="logo-lg">
                                 <img src="/assets/logo-dark.png" alt="dark logo">
                             </span>
                             <span class="logo-sm">
                                 <img src="/assets/logo-dark-sm.png" alt="small logo">
                             </span>
-                        </a>
+                        <% end %>
                     </div>
 
                     <!-- Sidebar Menu Toggle Button -->
@@ -133,24 +133,24 @@
         <div class="leftside-menu">
 
             <!-- Brand Logo Light -->
-            <a href="index.html" class="logo logo-light">
+            <%= link_to essays_path, class: "logo logo-light" do %>
                 <span class="logo-lg">
                     <img src="/assets/logo.png" alt="logo">
                 </span>
                 <span class="logo-sm">
                     <img src="/assets/logo-sm.png" alt="small logo">
                 </span>
-            </a>
+            <% end %>
 
             <!-- Brand Logo Dark -->
-            <a href="index.html" class="logo logo-dark">
+            <%= link_to essays_path, class: "logo logo-dark" do %>
                 <span class="logo-lg">
                     <img src="/assets/logo-dark.png" alt="dark logo">
                 </span>
                 <span class="logo-sm">
                     <img src="/assets/logo-dark-sm.png" alt="small logo">
                 </span>
-            </a>
+            <% end %>
 
             <!-- Sidebar Hover Menu Toggle Button -->
             <div class="button-sm-hover" data-bs-toggle="tooltip" data-bs-placement="right" title="Show Full Sidebar">
